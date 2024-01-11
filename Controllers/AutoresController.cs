@@ -32,6 +32,7 @@ namespace ProyectoClase.Controllers
 
             if (ModelState.IsValid)
             {
+
                 _context.Add(autor);
                 await _context.SaveChangesAsync();
                 TempData["AlertMessage"] = "Autor creado exitosamente";
