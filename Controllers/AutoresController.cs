@@ -49,7 +49,7 @@ namespace ProyectoClase.Controllers
         }
 
 
-        [HttpPost]
+       
         public async Task<IActionResult> Editar(int? id)
         {
             if (id == null || _context.Autores == null)
@@ -66,6 +66,8 @@ namespace ProyectoClase.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken] // Agregar validación de token anti falsificación en la solicitud POST
+
         public async Task<IActionResult> Editar(int id, Autor autor)
         {
             if (id != autor.IdAutor)

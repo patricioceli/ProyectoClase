@@ -1,17 +1,18 @@
 ﻿@model ProyectoClase.Models.Entidades.Autor
 @{
-    ViewData["Title"] = "CrearAutores";
+    ViewData["Title"] = "Editar";
     Layout = null;
 }
 
 <div class=" col-md-12">
     <div class=" card">
         <div class=" card-header text-center">
-            <h5> Crear Autor</h5>
+            <h5> Editar Autor</h5>
         </div>
         <div class=" card-body text-center">
-            <form asp-action="Crear">
+            <form asp-action="Editar">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="IdAutor" />
                 <div class="form-group">
                     <label></label>
                     <input asp-for="Nombre" class="form-control" placeholder=" Nombre" />
@@ -37,4 +38,3 @@
         </div>
     </div>
 </div>
-
