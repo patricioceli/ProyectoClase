@@ -6,14 +6,16 @@ namespace ProyectoClase.Services
 {
     public class ServicioImagen : IServicioImagen
     {
-        public async Task<string> SubirImagen(Stream archivo, string nombre)
+        public async Task<string> SubirImagen(Stream archivo,
+            string nombre)
         {
-            string email = "";
-            string clave = "";
-            string ruta = "";
-            string api_key = "";
+            string email = "patricio.celi@itq.edu.ec";
+            string clave = "Itq2023*";
+            string ruta = "proyectoclaselibreria.appspot.com";
+            string api_key = "AIzaSyBYn994EANCSJOn2ZXaRr5u-ROMtzlWWZE";
 
-            var auth = new FirebaseAuthProvider(new FirebaseConfig(api_key));
+            var auth = new FirebaseAuthProvider
+                (new FirebaseConfig(api_key));
             var a = await auth.SignInWithEmailAndPasswordAsync(email, clave);
 
             var cancellation = new CancellationTokenSource();
@@ -33,5 +35,7 @@ namespace ProyectoClase.Services
             var downloadURL = await task;
             return downloadURL;
         }
+
+
     }
 }
